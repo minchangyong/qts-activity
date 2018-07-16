@@ -3,27 +3,35 @@ Page({
     isCanvas: false,
     isPhotoModel: false,
     isAvatarUrl: false,
-    avatarUrl: '', //用户头像
+    myAvatarUrl: wx.getStorageSync('myAvatarUrl'), //用户头像
     showHeartbeat: true,
+    canvasImage: '',
     shareImagePath: '' //生成的头像
+  },
+  onShareAppMessage() {
+    return {
+      title: `快来领取你的青团社五周年专属头像吧～`,
+      imageUrl: 'https://ojlf2aayk.qnssl.com/20180713shareImage.png',
+      path: '/pages/fiveAnniversary/fiveAnniversary'
+    }
   },
   onLoad() {
     let _this = this
     wx.getImageInfo({
-      src: 'https://ojlf2aayk.qnssl.com/20180713logo.png',
+      src: 'https://ojlf2aayk.qnssl.com/20180713beer-icon.png',
       success: (res) => {
         _this.setData({
           canvasImage: res.path
         })
       }
     })
-    if (this.data.avatarUrl || wx.getStorageSync('avatarUrl')) {
+    if (_this.data.myAvatarUrl || wx.getStorageSync('myAvatarUrl')) {
       wx.getImageInfo({
-        src: this.data.avatarUrl || wx.getStorageSync('avatarUrl'),
+        src: _this.data.myAvatarUrl || wx.getStorageSync('myAvatarUrl'),
         success: (res) => {
           _this.setData({
             isAvatarUrl: true,
-            avatarUrl: res.path
+            myAvatarUrl: res.path
           })
         }
       })
@@ -53,13 +61,18 @@ Page({
       wx.showToast({
         title: '授权成功'
       })
-      _this.setData({
-        avatarUrl: e.detail.userInfo.avatarUrl,
-        isAvatarUrl: true
-      })
       wx.setStorage({
-        key: 'avatarUrl',
-        data: e.detail.userInfo.avatarUrl
+        key: 'myAvatarUrl',
+        data: e.detail.userInfo.avatarUrl.replace(/132/, '0')
+      })
+      wx.getImageInfo({
+        src: e.detail.userInfo.avatarUrl.replace(/132/, '0'),
+        success: (res) => {
+          _this.setData({
+            myAvatarUrl: res.path,
+            isAvatarUrl: true
+          })
+        }
       })
     }
   },
@@ -69,7 +82,7 @@ Page({
         isPhotoModel: true
       })
     } else {
-      if (this.data.avatarUrl && this.data.canvasImage) {
+      if (this.data.myAvatarUrl && this.data.canvasImage) {
         wx.showLoading({
           title: '正在生成...',
           mask: true
@@ -93,12 +106,12 @@ Page({
     }
   },
   setAvatarUrl(context) {
-    var d = 2 * 121
-    var cx = 66 + 121
-    var cy = 64 + 121
-    context.arc(cx, cy, 121, 0, 2 * Math.PI)
+    var d = 2 * 126
+    var cx = 62 + 126
+    var cy = 62 + 126
+    context.arc(cx, cy, 126, 0, 2 * Math.PI)
     context.clip()
-    context.drawImage(this.data.avatarUrl, 66, 64, d, d)
+    context.drawImage(this.data.myAvatarUrl, 62, 62, d, d)
     context.restore()
   },
   //将canvas转换为图片保存到本地，然后将图片路径传给image图片的src
@@ -108,28 +121,32 @@ Page({
     let path = this.data.canvasImage
     context.drawImage(path, 0, 0, 375, 375)
     _this.setAvatarUrl(context)
-    console.log(this.data.avatarUrl)
-    //绘制图片
-    context.draw()
     context.save()
+    //绘制图片
+    context.draw(false, () => {
+      setTimeout(() => {
+        wx.canvasToTempFilePath({
+          canvasId: 'mycanvas',
+          destWidth: 800,
+          destHeight: 800,
+          quality: 1,
+          fileType: 'png',
+          success: (res) => {
+            _this.setData({
+              shareImagePath: res.tempFilePath
+            })
+            wx.setStorage({
+              key: 'shareImagePath',
+              data: res.tempFilePath
+            })
+          },
+          fail: (res) => {
+            console.log(res.errMsg)
+          }
+        }, this)
+      }, 2000)
+    })
     //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
-    setTimeout(() => {
-      wx.canvasToTempFilePath({
-        canvasId: 'mycanvas',
-        success: (res) => {
-          _this.setData({
-            shareImagePath: res.tempFilePath
-          })
-          wx.setStorage({
-            key: 'shareImagePath',
-            data: res.tempFilePath
-          })
-        },
-        fail: (res) => {
-          console.log(res.errMsg)
-        }
-      }, this)
-    }, 2000)
   },
   savePhoto() {
     let _this = this
@@ -145,7 +162,6 @@ Page({
             title: '保存成功',
             icon: 'none'
           })
-          _this.dance()
           setTimeout(() => {
             wx.hideLoading()
             _this.setData({

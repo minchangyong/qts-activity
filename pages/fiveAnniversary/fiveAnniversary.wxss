@@ -20,8 +20,8 @@
 }
 
 .canvas {
-  width: 375px;
-  height: 375px;
+  width: 375px !important;
+  height: 375px !important;
 }
 
 .photoModel {
@@ -69,7 +69,7 @@
   width: 162rpx;
   height: 162rpx;
   border-radius: 50%;
-  margin-top: -207rpx;
+  margin-top: -206rpx;
   margin-left: 194rpx;
   float: left;
 }
