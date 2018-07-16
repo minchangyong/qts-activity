@@ -1,0 +1,27 @@
+<heartbeat id='heartbeat' wx:if="{{showHeartbeat}}"></heartbeat>
+<image mode="widthFix" src="https://ojlf2aayk.qnssl.com/20180713background.png" class="background" />
+<image mode="widthFix" src="https://ojlf2aayk.qnssl.com/20180713creatbtn.png" class="beginBtn" bindtap="showPhoto" />
+<view class="photoModel" wx:if="{{isPhotoModel}}" catchtouchmove="preventTouchMove">
+  <view class="photoBacks" bindtap="hideSaveModel"></view>
+  <view class="photoCount">
+    <image mode="widthFix" class="contentImage" src="https://ojlf2aayk.qnssl.com/20180713logo.png"></image>
+    <image mode="widthFix" class="contentHead" src="{{avatarUrl}}"></image>
+    <image mode="widthFix" class="contentSavePhoto" src="https://ojlf2aayk.qnssl.com/20180713savebtn.png" bindtap="savePhoto"></image>
+  </view>
+</view>
+<view class="authModel" wx:if="{{!isAvatarUrl}}">
+  <view class="authBacks"></view>
+  <view class="authCount">
+    <view class="authTitle">授权提示</view>
+    <view class="authCenter">
+      <image mode="widthFix" class="qtsLogo" src="https://ojlf2aayk.qnssl.com/logo_bak.png"></image>
+      <view class="authTips">本活动需要授权才能参与</view>
+    </view>
+    <view class="littleTips">·获得你的公开信息(昵称、头像等)</view>
+    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="toAuthLogin">去授权</button>
+  </view>
+</view>
+<!-- 绘制canvas -->
+<view class="canvas-box" wx:if="{{isCanvas}}">
+  <canvas canvas-id="mycanvas" class="canvas"></canvas>
+</view>

@@ -1,0 +1,171 @@
+.background {
+  width: 100%;
+  min-height: 100vh;
+  float: left;
+}
+
+.beginBtn {
+  width: 400rpx;
+  bottom: 40rpx;
+  margin-left: 187.5rpx;
+  margin-top: -20%;
+  float: left;
+}
+
+.canvas-box {
+  width: 100%;
+  height: 100%;
+  float: left;
+  margin-top: 100rpx;
+}
+
+.canvas {
+  width: 375px;
+  height: 375px;
+}
+
+.photoModel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 777;
+}
+
+.photoBacks {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 888;
+  top: 0;
+}
+
+.photoCount {
+  width: 550rpx;
+  height: 650rpx;
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  margin-top: -450rpx;
+  margin-left: -275rpx;
+  background: #FFF;
+  border-radius: 8rpx;
+  padding: 15rpx 0;
+  background: url('https://ojlf2aayk.qnssl.com/20180713model.png') no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.contentImage {
+  width: 250rpx;
+  height: 250rpx;
+  margin-left: 150rpx;
+  margin-top: 100rpx;
+  float: left;
+}
+
+.contentHead {
+  width: 162rpx;
+  height: 162rpx;
+  border-radius: 50%;
+  margin-top: -207rpx;
+  margin-left: 194rpx;
+  float: left;
+}
+
+.contentSavePhoto {
+  width: 300rpx;
+  margin-left: 125rpx;
+  margin-top: 180rpx;
+}
+
+.authModel {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+}
+
+.authBacks {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  z-index: 44;
+  top: 0;
+}
+
+.authCount {
+  width: 500rpx;
+  border-radius: 8rpx;
+  background: #FFF;
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  margin-top: -200rpx;
+  margin-left: -300rpx;
+  z-index: 88;
+  padding: 32rpx 48rpx;
+}
+
+.authTitle {
+  width: 100%;
+  color: #6C6C6C;
+  font-size: 32rpx;
+}
+
+.authCenter {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 32rpx;
+}
+
+.qtsLogo {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 24rpx;
+}
+
+.littleTips {
+  width: 100%;
+  color: #6C6C6C;
+  font-size: 22rpx;
+  padding-left: 120rpx;
+  margin-top: 16rpx;
+}
+
+.authTips {
+  line-height: 96rpx;
+  color: #3C3C3C;
+  font-size: 28rpx;
+  float: left;
+}
+
+.toAuthLogin {
+  width: 192rpx;
+  height: 72rpx;
+  float: right;
+  color: #00CC88;
+  font-size: 28rpx;
+  line-height: 72rpx;
+  background: #FFF;
+  margin-top: 32rpx;
+  border: none;
+}
+
+.downClose {
+  width: 100%;
+  text-align: center;
+  margin-top: 48rpx;
+  float: left;
+}
+
+.closeRule {
+  width: 50rpx;
+  height: 50rpx;
+  float: none;
+}
