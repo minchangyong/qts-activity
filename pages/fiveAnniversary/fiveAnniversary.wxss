@@ -78,6 +78,7 @@
   width: 300rpx;
   margin-left: 125rpx;
   margin-top: 180rpx;
+  height: 82.5rpx;
 }
 
 .authModel {
