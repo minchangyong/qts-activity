@@ -1,0 +1,974 @@
+let nameList = [{
+  name: '邓建波',
+  startYear: 'Q20130701',
+  online: 2192,
+  index: '00001',
+  hour: 52608
+}, {
+  name: '毛大山',
+  startYear: 'Q20140219',
+  online: 1977,
+  index: '00003',
+  hour: 47448
+}, {
+  name: '丁祥祥',
+  startYear: 'Q20140301',
+  online: 1967,
+  index: '00004',
+  hour: 47208
+}, {
+  name: '林晓磊',
+  startYear: 'Q20140401',
+  online: 1936,
+  index: '00228',
+  hour: 46464
+}, {
+  name: '谢欢笑',
+  startYear: 'Q20150401',
+  online: 1571,
+  index: '00008',
+  hour: 37704
+}, {
+  name: '钟昱',
+  startYear: 'Q20150502',
+  online: 1540,
+  index: '00009',
+  hour: 36960
+}, {
+  name: '谢云燕',
+  startYear: 'Q20150504',
+  index: '00010',
+  online: 1538,
+  hour: 36912
+}, {
+  name: '裘馨蕾',
+  startYear: 'Q20150508',
+  online: 1534,
+  index: '00011',
+  hour: 36816
+}, {
+  name: '陈欣',
+  startYear: 'Q20150801',
+  online: 1449,
+  index: '00012',
+  hour: 34776
+}, {
+  name: '闵昌勇',
+  startYear: 'Q20160307',
+  online: 1230,
+  index: '00017',
+  hour: 29520
+}, {
+  name: '胡腾飞',
+  startYear: 'Q20160418',
+  online: 1188,
+  index: '00021',
+  hour: 28512
+}, {
+  name: '何凌远',
+  startYear: 'Q20160622',
+  online: 1123,
+  index: '00023',
+  hour: 26952
+}, {
+  name: '朱倩',
+  startYear: 'Q20160623',
+  online: 1122,
+  index: '00024',
+  hour: 26928
+}, {
+  name: '叶威涛',
+  startYear: 'Q20160623',
+  online: 1122,
+  index: '00025',
+  hour: 26928
+}, {
+  name: '张瑞',
+  startYear: 'Q20160627',
+  online: 1118,
+  index: '00027',
+  hour: 26832
+}, {
+  name: '何陈振',
+  startYear: 'Q20160707',
+  online: 1108,
+  index: '00028',
+  hour: 26592
+}, {
+  name: '周嘉成',
+  startYear: 'Q20160712',
+  online: 1103,
+  index: '00029',
+  hour: 26472
+}, {
+  name: '魏祥',
+  startYear: 'Q20160918',
+  online: 1035,
+  index: '00031',
+  hour: 24840
+}, {
+  name: '潘燚凯',
+  startYear: 'Q20161014',
+  online: 1009,
+  index: '00033',
+  hour: 24216
+}, , {
+  name: '吴雷',
+  startYear: 'Q20161028',
+  online: 995,
+  index: '00015',
+  hour: 23880
+}, {
+  name: '潘泓',
+  startYear: 'Q20161213',
+  online: 949,
+  index: '00038',
+  hour: 22776
+}, {
+  name: '陈庚',
+  startYear: 'Q20170206',
+  online: 894,
+  index: '00040',
+  hour: 21456
+}, {
+  name: '赵天明',
+  startYear: 'Q20170213',
+  online: 887,
+  index: '00042',
+  hour: 21288
+}, {
+  name: '汪超',
+  startYear: 'Q20170213',
+  online: 887,
+  index: '00043',
+  hour: 21288
+}, {
+  name: '邓文枫',
+  startYear: 'Q20170217',
+  online: 883,
+  index: '00044',
+  hour: 21192
+}, {
+  name: '吴豪',
+  startYear: 'Q20170224',
+  online: 876,
+  index: '00048',
+  hour: 21024
+}, {
+  name: '邓凯',
+  startYear: 'Q20170314',
+  online: 858,
+  index: '00049',
+  hour: 20592
+}, {
+  name: '陈奕恺',
+  startYear: 'Q20170410',
+  online: 831,
+  index: '00059',
+  hour: 19944
+}, {
+  name: '崔希明',
+  startYear: 'Q20170412',
+  online: 829,
+  index: '00061',
+  hour: 19896
+}, {
+  name: '陈艳',
+  startYear: 'Q20170417',
+  online: 824,
+  index: '00068',
+  hour: 19776
+}, {
+  name: '黄立斌',
+  startYear: 'Q20170417',
+  online: 824,
+  index: '00067',
+  hour: 19776
+}, {
+  name: '李昕',
+  startYear: 'Q20170419',
+  online: 822,
+  index: '00070',
+  hour: 19728
+}, {
+  name: '朱小凯',
+  startYear: 'Q20170427',
+  online: 814,
+  index: '00073',
+  hour: 19536
+}, {
+  name: '王丽琳',
+  startYear: 'Q20170502',
+  online: 809,
+  index: '00074',
+  hour: 19416
+}, {
+  name: '甘代双',
+  startYear: 'Q20170504',
+  online: 807,
+  index: '00075',
+  hour: 19368
+}, {
+  name: '田春暖',
+  startYear: 'Q20170508',
+  online: 803,
+  index: '00083',
+  hour: 19272
+}, {
+  name: '秦瑶',
+  startYear: 'Q20170508',
+  online: 803,
+  index: '00079',
+  hour: 19272
+}, {
+  name: '宋燕琴',
+  startYear: 'Q20170508',
+  online: 803,
+  index: '00082',
+  hour: 19272
+}, {
+  name: '樊焱林',
+  startYear: 'Q20170525',
+  online: 786,
+  index: '00091',
+  hour: 18864
+}, {
+  name: '吴滨',
+  startYear: 'Q20170525',
+  online: 786,
+  index: '00092',
+  hour: 18864
+}, {
+  name: '郁涵',
+  startYear: 'Q20170601',
+  online: 779,
+  index: '00095',
+  hour: 18696
+}, {
+  name: '杨璐',
+  startYear: 'Q20170601',
+  online: 779,
+  index: '00096',
+  hour: 18696
+}, {
+  name: '童洲',
+  startYear: 'Q20170619',
+  index: '00107',
+  online: 761,
+  hour: 18264
+}, {
+  name: '谷扬',
+  startYear: 'Q20170620',
+  index: '00109',
+  online: 760,
+  hour: 18240
+}, {
+  name: '常亮',
+  startYear: 'Q20170626',
+  index: '00113',
+  online: 754,
+  hour: 18096
+}, {
+  name: '沈燕敏',
+  startYear: 'Q20170626',
+  index: '00118',
+  online: 754,
+  hour: 18096
+}, {
+  name: '谢马玲',
+  startYear: 'Q20170724',
+  index: '00149',
+  online: 726,
+  hour: 17424
+}, {
+  name: '贾文军',
+  startYear: 'Q20170807',
+  index: '00155',
+  online: 712,
+  hour: 17088
+}, {
+  name: '李扬',
+  startYear: 'Q20170822',
+  index: '00167',
+  online: 697,
+  hour: 16728
+}, {
+  name: '潘丽婷',
+  startYear: 'Q20170824',
+  index: '00169',
+  online: 695,
+  hour: 16680
+}, {
+  name: '曹鹏飞',
+  startYear: 'Q20170904',
+  index: '00184',
+  online: 684,
+  hour: 16416
+}, {
+  name: '谢余慧',
+  startYear: 'Q20170905',
+  index: '00187',
+  online: 683,
+  hour: 16392
+}, {
+  name: '邓文龙',
+  startYear: 'Q20170907',
+  index: '00190',
+  online: 681,
+  hour: 16344
+}, {
+  name: '王晓媛',
+  startYear: 'Q20170911',
+  index: '00194',
+  online: 677,
+  hour: 16248
+}, {
+  name: '许天然',
+  startYear: 'Q20170918',
+  index: '00201',
+  online: 670,
+  hour: 16080
+}, {
+  name: '李娜',
+  startYear: 'Q20171012',
+  index: '00226',
+  online: 646,
+  hour: 15504
+}, {
+  name: '张曌佳',
+  startYear: 'Q20171017',
+  index: '00227',
+  online: 641,
+  hour: 15384
+}, {
+  name: '裴小腊',
+  startYear: 'Q20171023',
+  index: '00235',
+  online: 635,
+  hour: 15240
+}, {
+  name: '黄艺恒',
+  startYear: 'Q20171113',
+  index: '00264',
+  online: 614,
+  hour: 14736
+}, {
+  name: '罗承志',
+  startYear: 'Q20171113',
+  index: '00269',
+  online: 614,
+  hour: 14736
+}, {
+  name: '王峰',
+  startYear: 'Q20171113',
+  index: '00266',
+  online: 614,
+  hour: 14736
+}, {
+  name: '余田',
+  startYear: 'Q20171113',
+  index: '00267',
+  online: 614,
+  hour: 14736
+}, {
+  name: '蔡万俊',
+  startYear: 'Q20171114',
+  index: '00273',
+  online: 613,
+  hour: 14712
+}, {
+  name: '胥胜男',
+  startYear: 'Q20171120',
+  index: '00277',
+  online: 607,
+  hour: 14568
+}, {
+  name: '柳春晓',
+  startYear: 'Q20171127',
+  index: '00293',
+  online: 600,
+  hour: 14400
+}, {
+  name: '查昊',
+  startYear: 'Q20171206',
+  index: '00326',
+  online: 591,
+  hour: 14184
+}, {
+  name: '余浩',
+  startYear: 'Q20171218',
+  index: '00346',
+  online: 579,
+  hour: 13896
+}, {
+  name: '黄文安',
+  startYear: 'Q20171221',
+  index: '00362',
+  online: 576,
+  hour: 13824
+}, {
+  name: '詹超',
+  startYear: 'Q20171221',
+  index: '00363',
+  online: 576,
+  hour: 13824
+}, {
+  name: '袁慧',
+  startYear: 'Q20180227',
+  index: '00442',
+  online: 508,
+  hour: 12192
+}, {
+  name: '余珍',
+  startYear: 'Q20180312',
+  index: '00506',
+  online: 495,
+  hour: 11880
+}, {
+  name: '沈玲玲',
+  startYear: 'Q20180312',
+  index: '00497',
+  online: 495,
+  hour: 11880
+}, {
+  name: '李芳',
+  startYear: 'Q20180312',
+  index: '00501',
+  online: 495,
+  hour: 11880
+}, {
+  name: '沈林杰',
+  startYear: 'Q20180313',
+  index: '00516',
+  online: 494,
+  hour: 11856
+}, {
+  name: '蒋超',
+  startYear: 'Q20180313',
+  index: '00513',
+  online: 494,
+  hour: 11856
+}, {
+  name: '桂方银',
+  startYear: 'Q20180314',
+  index: '00527',
+  online: 493,
+  hour: 11832
+}, {
+  name: '陈超',
+  startYear: 'Q20180329',
+  index: '00589',
+  online: 478,
+  hour: 11472
+}, {
+  name: '王宇',
+  startYear: 'Q20180402',
+  index: '00597',
+  online: 474,
+  hour: 11376
+}, {
+  name: '阮晴强',
+  startYear: 'Q20180404',
+  index: '00610',
+  online: 472,
+  hour: 11328
+}, {
+  name: '路丹',
+  startYear: 'Q20180408',
+  index: '00613',
+  online: 468,
+  hour: 11232
+}, {
+  name: '许亚楠',
+  startYear: 'Q20180409',
+  index: '00619',
+  online: 467,
+  hour: 11208
+}, {
+  name: '杨洁',
+  startYear: 'Q20180423',
+  index: '00654',
+  online: 453,
+  hour: 10872
+}, {
+  name: '陈可',
+  startYear: 'Q20180502',
+  index: '00674',
+  online: 444,
+  hour: 10656
+}, {
+  name: '倪文佳',
+  startYear: 'Q20180502',
+  index: '00678',
+  online: 444,
+  hour: 10656
+}, {
+  name: '林炜炜',
+  startYear: 'Q20180514',
+  index: '00702',
+  online: 432,
+  hour: 10368
+}, {
+  name: '汪晨阳',
+  startYear: 'Q20180521',
+  index: '00712',
+  online: 425,
+  hour: 10200
+}, {
+  name: '周佳宁',
+  startYear: 'Q20180528',
+  index: '00729',
+  online: 418,
+  hour: 10032
+}, {
+  name: '马佳丽',
+  startYear: 'Q20180604',
+  index: '00755',
+  online: 411,
+  hour: 9864
+}, {
+  name: '陈博',
+  startYear: 'Q20180604',
+  index: '00752',
+  online: 411,
+  hour: 9864
+}, {
+  name: '吴曼妮',
+  startYear: 'Q20180620',
+  index: '00787',
+  online: 395,
+  hour: 9480
+}, {
+  name: '周思佳',
+  startYear: 'Q20180627',
+  index: '00806',
+  online: 388,
+  hour: 9312
+}, {
+  name: '何子煊',
+  startYear: 'Q20180702',
+  index: '00822',
+  online: 383,
+  hour: 9192
+}, {
+  name: '张永铭',
+  startYear: 'Q20180727',
+  index: '00906',
+  online: 358,
+  hour: 8592
+}, {
+  name: '辛宇',
+  startYear: 'Q20180730',
+  index: '00913',
+  online: 355,
+  hour: 8520
+}, {
+  name: '郭可可',
+  startYear: 'Q20180802',
+  index: '00927',
+  online: 352,
+  hour: 8448
+}, {
+  name: '董妍',
+  startYear: 'Q20180806',
+  index: '00936',
+  online: 348,
+  hour: 8352
+}, {
+  name: '厉艳虹',
+  startYear: 'Q20180809',
+  index: '00939',
+  online: 345,
+  hour: 8280
+}, {
+  name: '陈驰',
+  startYear: 'Q20180820',
+  index: '00951',
+  online: 334,
+  hour: 8016
+}, {
+  name: '于久声',
+  startYear: 'Q20180823',
+  index: '00959',
+  online: 331,
+  hour: 7944
+}, {
+  name: '项雅雅',
+  startYear: 'Q20180827',
+  index: '00962',
+  online: 327,
+  hour: 7848
+}, {
+  name: '方洋',
+  startYear: 'Q20180830',
+  index: '00964',
+  online: 324,
+  hour: 7776
+}, {
+  name: '石开斌',
+  startYear: 'Q20180910',
+  index: '00967',
+  online: 313,
+  hour: 7512
+}, {
+  name: '孙科英',
+  startYear: 'Q20180912',
+  index: '00969',
+  online: 311,
+  hour: 311
+}, {
+  name: '关瑞洁',
+  startYear: 'Q20181008',
+  index: '00979',
+  online: 285,
+  hour: 6840
+}, {
+  name: '富钰',
+  startYear: 'Q20181025',
+  index: '00988',
+  online: 268,
+  hour: 6432
+}, {
+  name: '张峰',
+  startYear: 'Q20181105',
+  index: '00992',
+  online: 257,
+  hour: 6168
+}, {
+  name: '冯杰',
+  startYear: 'Q20181105',
+  index: '00993',
+  online: 257,
+  hour: 6168
+}, {
+  name: '郑浩嘉',
+  startYear: 'Q20181105',
+  index: '00994',
+  online: 257,
+  hour: 6168
+}, {
+  name: '杨平帆',
+  startYear: 'Q20181112',
+  index: '00995',
+  online: 250,
+  hour: 6000
+}, {
+  name: '黄思豪',
+  startYear: 'Q20181115',
+  index: '00996',
+  online: 247,
+  hour: 5928
+}, {
+  name: '陆曼蔚',
+  startYear: 'Q20181225',
+  index: '01001',
+  online: 207,
+  hour: 4968
+}, {
+  name: '张梦婷',
+  startYear: 'Q20181228',
+  index: '01002',
+  online: 204,
+  hour: 4896
+}, {
+  name: '皮倩倩',
+  startYear: 'Q20190107',
+  index: '01005',
+  online: 194,
+  hour: 4656
+}, {
+  name: '陈晓坚',
+  startYear: 'Q20190115',
+  index: '01006',
+  online: 186,
+  hour: 4464
+}, {
+  name: '郑天慧',
+  startYear: 'Q20190214',
+  index: '01050',
+  online: 156,
+  hour: 3744
+}, {
+  name: '张丽萍',
+  startYear: 'Q20190218',
+  index: '01007',
+  online: 152,
+  hour: 3648
+}, {
+  name: '张汗青',
+  startYear: 'Q20190225',
+  index: '01008',
+  online: 145,
+  hour: 3480
+}, {
+  name: '魏星',
+  startYear: 'Q20190304',
+  index: '01011',
+  online: 138,
+  hour: 3312
+}, {
+  name: '邢美梅',
+  startYear: 'Q20190304',
+  index: '01014',
+  online: 138,
+  hour: 3312
+}, {
+  name: '金佳杰',
+  startYear: 'Q20190304',
+  index: '01012',
+  online: 138,
+  hour: 3312
+}, {
+  name: '丁丽媛',
+  startYear: 'Q20190311',
+  index: '01018',
+  online: 131,
+  hour: 3144
+}, {
+  name: '陈季园',
+  startYear: 'Q20190311',
+  index: '01016',
+  online: 131,
+  hour: 3144
+}, {
+  name: '王云云',
+  startYear: 'Q20190312',
+  index: '01051',
+  online: 130,
+  hour: 3120
+}, {
+  name: '傅奇凡',
+  startYear: 'Q20190325',
+  index: '01021',
+  online: 117,
+  hour: 2808
+}, {
+  name: '孙慕武',
+  startYear: 'Q20190401',
+  index: '01022',
+  online: 110,
+  hour: 2640
+}, {
+  name: '吕杭萍',
+  startYear: 'Q20190401',
+  index: '01023',
+  online: 110,
+  hour: 2640
+}, {
+  name: '叶开拓',
+  startYear: 'Q20190408',
+  index: '01025',
+  online: 103,
+  hour: 2472
+}, {
+  name: '曹妤如',
+  startYear: 'Q20190408',
+  index: '01052',
+  online: 103,
+  hour: 2472
+}, {
+  name: '程龙亿',
+  startYear: 'Q20190408',
+  index: '01026',
+  online: 103,
+  hour: 2472
+}, {
+  name: '刘珊珊',
+  startYear: 'Q20190409',
+  index: '01028',
+  online: 102,
+  hour: 2448
+}, {
+  name: '陶婷',
+  startYear: 'Q20190418',
+  index: '01030',
+  online: 93,
+  hour: 2232
+}, {
+  name: '李士轩',
+  startYear: 'Q20190422',
+  index: '01031',
+  online: 89,
+  hour: 2136
+}, {
+  name: '蒋路平',
+  startYear: 'Q20190422',
+  index: '01032',
+  online: 89,
+  hour: 2136
+}, {
+  name: '滕美龄',
+  startYear: 'Q20190425',
+  index: '01033',
+  online: 86,
+  hour: 2064
+}, {
+  name: '叶凌宵',
+  startYear: 'Q20190428',
+  index: '01034',
+  online: 83,
+  hour: 1992
+}, {
+  name: '曹毓嘉',
+  startYear: 'Q20190513',
+  index: '01037',
+  online: 68,
+  hour: 1632
+}, {
+  name: '李月',
+  startYear: 'Q20190516',
+  index: '01038',
+  online: 65,
+  hour: 1560
+}, {
+  name: '金婷婷',
+  startYear: 'Q20190520',
+  index: '01039',
+  online: 61,
+  hour: 1464
+}, {
+  name: '沈晴宇',
+  startYear: 'Q20190523',
+  index: '00965',
+  online: 58,
+  hour: 1392
+}, {
+  name: '李东瑞',
+  startYear: 'Q20190527',
+  index: '01040',
+  online: 54,
+  hour: 1296
+}, {
+  name: '赵婉晴',
+  startYear: 'Q20190530',
+  index: '01041',
+  online: 51,
+  hour: 1224
+}, {
+  name: '陆永旭',
+  startYear: 'Q20190603',
+  index: '01042',
+  online: 47,
+  hour: 1128
+}, {
+  name: '赵振智',
+  startYear: 'Q20190603',
+  index: '01043',
+  online: 47,
+  hour: 1128
+}, {
+  name: '郭凯',
+  startYear: 'Q20190603',
+  index: '01044',
+  online: 47,
+  hour: 1128
+}, {
+  name: '梁士林',
+  startYear: 'Q20190613',
+  index: '01046',
+  online: 37,
+  hour: 888
+}, {
+  name: '牛荣萍',
+  startYear: 'Q20190620',
+  index: '01048',
+  online: 30,
+  hour: 720
+}, {
+  name: '张群',
+  startYear: 'Q20190620',
+  index: '01049',
+  online: 30,
+  hour: 720
+}, {
+  name: '丁莹婷',
+  startYear: 'Q20190626',
+  index: '01053',
+  online: 24,
+  hour: 576
+}, {
+  name: '罗建伟',
+  startYear: 'Q20190626',
+  index: '01054',
+  online: 23,
+  hour: 552
+}, {
+  name: '张凡',
+  startYear: 'Q20190627',
+  index: '01055',
+  online: 23,
+  hour: 552
+}, {
+  name: '刘业雷',
+  startYear: 'Q20190701',
+  index: '01057',
+  online: 19,
+  hour: 456
+}, {
+  name: '罗凇',
+  startYear: 'Q20190701',
+  index: '01058',
+  online: 19,
+  hour: 456
+}, {
+  name: '王璐',
+  startYear: 'Q20190701',
+  index: '01059',
+  online: 19,
+  hour: 456
+}, {
+  name: '周京',
+  startYear: 'Q20190703',
+  index: '01060',
+  online: 17,
+  hour: 408
+}, {
+  name: '秦涛',
+  startYear: 'Q20190704',
+  index: '01061',
+  online: 16,
+  hour: 384
+}, {
+  name: '赵洪涛',
+  startYear: 'Q20190704',
+  index: '01062',
+  online: 16,
+  hour: 384
+}, {
+  name: '王建荣',
+  startYear: 'Q20190704',
+  index: '01063',
+  online: 16,
+  hour: 384
+}, {
+  name: '赵建',
+  startYear: 'Q20190708',
+  index: '01064',
+  online: 12,
+  hour: 288
+}, {
+  name: '肖胜男',
+  startYear: 'Q20190711',
+  index: '01068',
+  online: 9,
+  hour: 216
+}, {
+  name: '谢华定',
+  startYear: 'Q20190711',
+  index: '01069',
+  online: 8,
+  hour: 216
+}, {
+  name: '周杭菁',
+  startYear: 'Q20190711',
+  index: '01070',
+  online: 7,
+  hour: 216
+}]
+
+
+
+
+module.exports = {
+  nameList
+}

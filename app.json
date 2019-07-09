@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/fiveAnniversary/fiveAnniversary"
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "6是我们的超能力",
     "navigationBarTextStyle": "black"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

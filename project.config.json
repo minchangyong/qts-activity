@@ -13,7 +13,9 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "wx98022f2618f42f63",
-	"projectname": "%E9%9D%92%E5%9B%A2%E7%A4%BE%E6%B4%BB%E5%8A%A8%E4%B8%AD%E5%BF%83",
+	"projectname": "qts-activity",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

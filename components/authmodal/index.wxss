@@ -1,0 +1,58 @@
+.auth-model {
+  width: 100%;
+  min-height: 100vh;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: #FFF;
+}
+
+.auth-model image {
+  float: none !important;
+}
+
+.qts-logo {
+  width: 30%;
+  height: 220rpx;
+  margin-top: 64rpx;
+}
+
+.center-tips {
+  width: calc(100% -64rpx);
+  margin-left: 32rpx;
+  padding-top: 32rpx;
+  border-top: 2rpx solid #EEE;
+  margin-top: 64rpx;
+}
+
+.qts-tips {
+  width: 100%;
+  font-size: 30rpx;
+  color: #3c3c3c;
+  text-align: left;
+  margin: 12rpx 0 32rpx;
+  font-weight: bold;
+}
+
+.user-tips {
+  width: 100%;
+  font-size: 24rpx;
+  color: #6c6c6c;
+  text-align: left;
+}
+
+.getUserInfo {
+  width: calc(100% - 64rpx);
+  height: 80rpx;
+  background: #52a936;
+  text-align: center;
+  color: #FFF;
+  font-size: 28rpx;
+  margin-left: 32rpx;
+  line-height: 80rpx;
+  border-radius: 8rpx;
+  margin-top: 64rpx;
+  display: block;
+}

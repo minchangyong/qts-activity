@@ -1,13 +1,8 @@
-
 App({
-  onLaunch: function () {
-  },
+  onLaunch() {},
 
   globalData: {
-    systemInfo: {
-      ...wx.getSystemInfoSync(),
-    },
-  },
 
-});
+  }
 
+})

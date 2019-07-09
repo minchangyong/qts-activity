@@ -1,0 +1,8 @@
+<view class="auth-model" wx:if="{{isShow}}" catchtouchmove="preventDefault">
+  <image mode="widthFix" src="https://qiniu-image.qtshe.com//20180208/qtshe-logo.jpg" class="qts-logo" />
+  <view class="center-tips">
+    <view class="qts-tips">该小程序由青团社兼职开发，向其提供以下权限即可继续操作</view>
+    <view class="user-tips">·获得您的公开信息（昵称、头像等）</view>
+  </view>
+  <button open-type="getUserInfo" class="getUserInfo" bindgetuserinfo="getUserInfo">确认授权</button>
+</view>

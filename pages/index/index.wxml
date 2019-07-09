@@ -1,0 +1,6 @@
+<!-- <heartbeat id='heartbeat' wx:if="{{showHeartbeat}}"></heartbeat> -->
+<input type="text" value="{{query}}" bindinput="searchQuery"/>
+
+<auth-modal isShow="{{isAuth}}" bind:initData="checkAuth"/>
+<view class="ripple" style="{{rippleStyle}}"></view>
+<view class="container" bindtouchstart="containerTap"></view>
