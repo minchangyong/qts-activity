@@ -157,8 +157,8 @@
 }
 
 .user-head {
-  width: 150rpx;
-  height: 150rpx;
+  width: 146rpx;
+  height: 146rpx;
   border-radius: 50%;
   display: block;
   position: absolute;
@@ -166,6 +166,7 @@
   top: 146rpx;
   left: 50%;
   margin-left: -74rpx;
+  border: 4rpx solid #FFF;
 }
 
 .save-btn {

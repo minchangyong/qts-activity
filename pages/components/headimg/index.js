@@ -33,7 +33,9 @@ Component({
                 left: '124rpx',
                 width: '502rpx',
                 height: '502rpx',
-                borderRadius: '502rpx'
+                borderRadius: '502rpx',
+                borderWidth: '6rpx',
+                borderColor: '#FFF',
               }
             }]
           }
