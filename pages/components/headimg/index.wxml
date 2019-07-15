@@ -1,0 +1,1 @@
+<painter palette="{{imgDraw}}" bind:imgOK="onImgOK" bind:onImgErr="onImgErr" style="position: fixed;top: -9999rpx;"/>

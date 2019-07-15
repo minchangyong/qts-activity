@@ -15,7 +15,7 @@ Component({
         })
         wx.setStorage({
           key: 'avatarUrl',
-          data: e.detail.userInfo.avatarUrl
+          data: e.detail.userInfo.avatarUrl.replace('/132', '/0')
         })
         this.triggerEvent('initData')
       }

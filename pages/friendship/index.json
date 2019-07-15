@@ -4,7 +4,6 @@
   "backgroundColor": "#4377ca",
   "backgroundTextStyle": "dark",
   "usingComponents": {
-    "auth-modal": "/components/authmodal/index",
-    "head-image": "/pages/components/headimg/index"
+    "painter": "/components/painter/painter"
   }
 }

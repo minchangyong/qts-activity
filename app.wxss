@@ -17,3 +17,11 @@ button::after {
   display: none;
   background: transparent;
 }
+
+image {
+  width: 100%;
+}
+
+view {
+  box-sizing: border-box;
+}

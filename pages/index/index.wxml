@@ -1,6 +1,39 @@
 <!-- <heartbeat id='heartbeat' wx:if="{{showHeartbeat}}"></heartbeat> -->
-<input type="text" value="{{query}}" bindinput="searchQuery"/>
-
-<auth-modal isShow="{{isAuth}}" bind:initData="checkAuth"/>
+<auth-modal isShow="{{isAuth}}" bind:initData="checkAuth" />
 <view class="ripple" style="{{rippleStyle}}"></view>
-<view class="container" bindtouchstart="containerTap"></view>
+<view class="container" bindtouchstart="containerTap">
+  <image src="https://qiniu-image.qtshe.com/20190712backpack.png" mode="widthFix" style="display: block;"/>
+  <view class="create-btns">
+    <button class="creatRecord" bindtap="creatRecord"></button>
+    <button class="creatHeadImg" bindtap="creatHeadImg"></button>
+  </view>
+</view>
+<view class="head-modal" wx:if="{{isShow}}">
+  <view class="head-back"></view>
+  <view class="head-content">
+    <view class="head-desc">
+      <image src="https://qiniu-image.qtshe.com/20190712002.png" class="head-rotate"/>
+      <image src="https://qiniu-image.qtshe.com/20190712head-image.png" class="head-image"/>
+      <image src="{{avatarUrl}}" class="user-head"/>
+      <image src="https://qiniu-image.qtshe.com/20190712sure-btn.png" class="save-btn" bindtap="savePhoto"/>
+    </view>
+    <image src="https://qiniu-image.qtshe.com/20190712004.png" class="close-btn" bindtap="closeModal"/>
+  </view>
+</view>
+<head-image isDraw="{{isDraw}}" bind:creatImgOK="handleSuccess"/>
+
+
+<view class="head-modal" wx:if="{{isDialog}}">
+  <view class="head-back"></view>
+  <view class="head-content">
+    <view class="head-desc active">
+      <image src="{{avatarUrl}}" class="user-headimg"/>
+      <view class="edit-input">
+        <input type="text" placeholder="如：邓建波" confirm-type="search" value="{{query}}" bindblur="searchQuery" maxlength="4"/>
+      </view>
+      <image wx:if="{{!hasPeople}}" src="https://qiniu-image.qtshe.com/20190712no-people.png" class="no-people" />
+      <button class="look-fly-record {{hasPeople ? '' : 'active'}}" bindtap="handleCreate"></button>
+    </view>
+    <image src="https://qiniu-image.qtshe.com/20190712004.png" class="close-btn" bindtap="creatRecord"/>
+  </view>
+</view>

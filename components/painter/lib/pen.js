@@ -74,19 +74,32 @@ export default class Painter {
    */
   _doClip(borderRadius, width, height) {
     if (borderRadius && width && height) {
-      const r = Math.min(borderRadius.toPx(), width / 2, height / 2);
+      let border = borderRadius.split(' ')
+      let r1 = 0
+      let r2 = 0
+      let r3 = 0
+      let r4 = 0
+      if (border.length == 1) {
+        r1 = r2 = r3 = r4 = Math.min(border[0].toPx(), width / 2, height / 2);
+      } else {
+        r1 = Math.min(border[0] == 0 ? 0 : border[0].toPx(), width / 2, height / 2);
+        r2 = Math.min(border[1] == 0 ? 0 : border[1].toPx(), width / 2, height / 2);
+        r3 = Math.min(border[2] == 0 ? 0 : border[2].toPx(), width / 2, height / 2);
+        r4 = Math.min(border[3] == 0 ? 0 : border[3].toPx(), width / 2, height / 2);
+      }
+      //const r = Math.min(borderRadius.toPx(), width / 2, height / 2);
       // 防止在某些机型上周边有黑框现象，此处如果直接设置 setFillStyle 为透明，在 Android 机型上会导致被裁减的图片也变为透明， iOS 和 IDE 上不会
       // setGlobalAlpha 在 1.9.90 起支持，低版本下无效，但把 setFillStyle 设为了 white，相对默认的 black 要好点
-      this.ctx.globalAlpha = 0;
-      this.ctx.fillStyle = 'white';
+      this.ctx.setGlobalAlpha(0);
+      this.ctx.setFillStyle('white');
       this.ctx.beginPath();
-      this.ctx.arc(-width / 2 + r, -height / 2 + r, r, 1 * Math.PI, 1.5 * Math.PI);
-      this.ctx.lineTo(width / 2 - r, -height / 2);
-      this.ctx.arc(width / 2 - r, -height / 2 + r, r, 1.5 * Math.PI, 2 * Math.PI);
-      this.ctx.lineTo(width / 2, height / 2 - r);
-      this.ctx.arc(width / 2 - r, height / 2 - r, r, 0, 0.5 * Math.PI);
-      this.ctx.lineTo(-width / 2 + r, height / 2);
-      this.ctx.arc(-width / 2 + r, height / 2 - r, r, 0.5 * Math.PI, 1 * Math.PI);
+      this.ctx.arc(-width / 2 + r1, -height / 2 + r1, r1, 1 * Math.PI, 1.5 * Math.PI);
+      this.ctx.lineTo(width / 2 - r2, -height / 2);
+      this.ctx.arc(width / 2 - r2, -height / 2 + r2, r2, 1.5 * Math.PI, 2 * Math.PI);
+      this.ctx.lineTo(width / 2, height / 2 - r3);
+      this.ctx.arc(width / 2 - r3, height / 2 - r3, r3, 0, 0.5 * Math.PI);
+      this.ctx.lineTo(-width / 2 + r4, height / 2);
+      this.ctx.arc(-width / 2 + r4, height / 2 - r4, r4, 0.5 * Math.PI, 1 * Math.PI);
       this.ctx.closePath();
       this.ctx.fill();
       // 在 ios 的 6.6.6 版本上 clip 有 bug，禁掉此类型上的 clip，也就意味着，在此版本微信的 ios 设备下无法使用 border 属性
@@ -95,7 +108,7 @@ export default class Painter {
           getApp().systemInfo.platform === 'ios')) {
         this.ctx.clip();
       }
-      this.ctx.globalAlpha = 1;
+      this.ctx.setGlobalAlpha(1);
     }
   }
 
@@ -143,36 +156,42 @@ export default class Painter {
     let height;
     let extra;
     switch (view.type) {
-      case 'text': {
-        const fontWeight = view.css.fontWeight === 'bold' ? 'bold' : 'normal';
-        view.css.fontSize = view.css.fontSize ? view.css.fontSize : '20rpx';
-        this.ctx.font = `normal ${fontWeight} ${view.css.fontSize.toPx()}px sans-serif`;
-        // this.ctx.setFontSize(view.css.fontSize.toPx());
-        const textLength = this.ctx.measureText(view.text).width;
-        width = view.css.width ? view.css.width.toPx() : textLength;
-        // 计算行数
-        const calLines = Math.ceil(textLength / width);
-        const lines = view.css.maxLines < calLines ? view.css.maxLines : calLines;
-        const lineHeight = view.css.lineHeight ? view.css.lineHeight.toPx() : view.css.fontSize.toPx();
-        height = lineHeight * lines;
-        extra = { lines: lines, lineHeight: lineHeight };
-        break;
-      }
-      case 'image': {
-        // image 如果未设置长宽，则使用图片本身的长宽
-        const ratio = getApp().systemInfo.pixelRatio ? getApp().systemInfo.pixelRatio : 2;
-        width = view.css && view.css.width ? view.css.width.toPx() : Math.round(view.sWidth / ratio);
-        height = view.css && view.css.height ? view.css.height.toPx() : Math.round(view.sHeight / ratio);
-        break;
-      }
-      default: {
-        if (!(view.css.width && view.css.height)) {
-          console.error('You should set width and height');
-          return;
+      case 'text':
+        {
+          const fontWeight = view.css.fontWeight === 'bold' ? 'bold' : 'normal';
+          view.css.fontSize = view.css.fontSize ? view.css.fontSize : '20rpx';
+          this.ctx.font = `normal ${fontWeight} ${view.css.fontSize.toPx()}px sans-serif`;
+          // this.ctx.setFontSize(view.css.fontSize.toPx());
+          const textLength = this.ctx.measureText(view.text).width;
+          width = view.css.width ? view.css.width.toPx() : textLength;
+          // 计算行数
+          const calLines = Math.ceil(textLength / width);
+          const lines = view.css.maxLines < calLines ? view.css.maxLines : calLines;
+          const lineHeight = view.css.lineHeight ? view.css.lineHeight.toPx() : view.css.fontSize.toPx();
+          height = lineHeight * lines;
+          extra = {
+            lines: lines,
+            lineHeight: lineHeight
+          };
+          break;
         }
-        width = view.css.width.toPx();
-        height = view.css.height.toPx();
-      }
+      case 'image':
+        {
+          // image 如果未设置长宽，则使用图片本身的长宽
+          const ratio = getApp().systemInfo.pixelRatio ? getApp().systemInfo.pixelRatio : 2;
+          width = view.css && view.css.width ? view.css.width.toPx() : Math.round(view.sWidth / ratio);
+          height = view.css && view.css.height ? view.css.height.toPx() : Math.round(view.sHeight / ratio);
+          break;
+        }
+      default:
+        {
+          if (!(view.css.width && view.css.height)) {
+            console.error('You should set width and height');
+            return;
+          }
+          width = view.css.width.toPx();
+          height = view.css.height.toPx();
+        }
     }
     const x = view.css && view.css.right ? this.style.width - view.css.right.toPx(true) : (view.css && view.css.left ? view.css.left.toPx(true) : 0);
     const y = view.css && view.css.bottom ? this.style.height - height - view.css.bottom.toPx(true) : (view.css && view.css.top ? view.css.top.toPx(true) : 0);
@@ -263,7 +282,10 @@ export default class Painter {
       extra,
     } = this._preProcess(view);
     this.ctx.fillStyle = view.css.color || 'black';
-    const { lines, lineHeight } = extra;
+    const {
+      lines,
+      lineHeight
+    } = extra;
     const preLineLength = Math.round(view.text.length / lines);
     let start = 0;
     let alreadyCount = 0;
