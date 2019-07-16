@@ -4,8 +4,9 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -18,8 +19,7 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"enhance": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
@@ -51,7 +51,7 @@
 					"id": 0,
 					"name": "分享",
 					"pathName": "pages/friendship/index",
-					"query": "sendData= {\"name\":\"闵昌勇\",\"hour\":\"2 9 5 2 0\",\"index\":\"0 0 0 1 7\",\"startYear\":\"Q 2 0 1 6 0 3 0 7\",\"online\":\"1 2 3 0\"}",
+					"query": "sendData= {\"name\":\"闵昌勇\",\"hour\":\"5 2 0 0 0\",\"index\":\"0 0 0 1 7\",\"startYear\":\"Q 2 0 1 6 0 3 0 7\",\"online\":\"3\"}",
 					"scene": null
 				}
 			]

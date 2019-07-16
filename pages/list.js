@@ -112,7 +112,7 @@ let nameList = [{
   online: '1 0 0 9',
   index: '0 0 0 3 3',
   hour: '2 4 2 1 6'
-}, , {
+}, {
   name: '吴雷',
   startYear: 'Q 2 0 1 6 1 0 2 8',
   online: '9 9 5',

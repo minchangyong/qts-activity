@@ -15,7 +15,7 @@
       <image src="https://qiniu-image.qtshe.com/20190712002.png" class="head-rotate"/>
       <image src="https://qiniu-image.qtshe.com/20190712head-image.png" class="head-image"/>
       <image src="{{avatarUrl}}" class="user-head"/>
-      <image src="https://qiniu-image.qtshe.com/20190712sure-btn.png" class="save-btn" bindtap="savePhoto"/>
+      <image src="https://qiniu-image.qtshe.com/20190712003.png" class="save-btn" bindtap="savePhoto"/>
     </view>
     <image src="https://qiniu-image.qtshe.com/20190712004.png" class="close-btn" bindtap="closeModal"/>
   </view>
@@ -31,8 +31,7 @@
       <view class="edit-input">
         <input type="text" placeholder="如：邓建波" confirm-type="search" value="{{query}}" bindblur="searchQuery" maxlength="4"/>
       </view>
-      <image wx:if="{{!hasPeople}}" src="https://qiniu-image.qtshe.com/20190712no-people.png" class="no-people" />
-      <button class="look-fly-record {{hasPeople ? '' : 'active'}}" bindtap="handleCreate"></button>
+      <button class="look-fly-record" bindtap="handleCreate"></button>
     </view>
     <image src="https://qiniu-image.qtshe.com/20190712004.png" class="close-btn" bindtap="creatRecord"/>
   </view>

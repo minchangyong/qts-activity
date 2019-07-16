@@ -135,6 +135,7 @@
   background-size: 100% 100%;
   margin: 96rpx auto 0;
 }
+
 .look-fly-record.active {
   margin-top: 52rpx;
 }
@@ -165,8 +166,9 @@
   z-index: 1000;
   top: 146rpx;
   left: 50%;
-  margin-left: -74rpx;
-  border: 4rpx solid #FFF;
+  margin-left: -80rpx;
+  border: 6rpx solid #FFF;
+  will-change: transform;
 }
 
 .save-btn {

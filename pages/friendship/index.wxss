@@ -7,7 +7,7 @@
 .saveTolocal {
   width: 382rpx;
   height: 102rpx;
-  margin: -300rpx auto 0;
+  margin: -280rpx auto 0;
   background: url(https://qiniu-image.qtshe.com/20190712savetolocal.png) no-repeat center center;
   background-size: 100% 100%;
 }

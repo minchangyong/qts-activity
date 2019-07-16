@@ -25,12 +25,12 @@ Page({
       imgDraw: {
         width: '750rpx',
         height: '1334rpx',
-        background: 'https://qiniu-image.qtshe.com/201907120711share-back.png',
+        background: 'https://qiniu-image.qtshe.com/20190716share-pack.png',
         views: [{
             type: 'text',
             text: this.data.name,
             css: {
-              top: '520rpx',
+              top: '556rpx',
               left: '196rpx',
               width: '400rpx',
               color: '#00cc88',
@@ -43,86 +43,91 @@ Page({
             type: 'text',
             text: this.data.startYear,
             css: {
-              top: '624rpx',
-              left: '90rpx',
+              top: '658rpx',
+              left: '96rpx',
               color: '#00cc88',
               fontWeight: 'bold',
-              fontSize: '24rpx'
+              fontSize: '30rpx'
             }
           },
           {
             type: 'text',
             text: this.data.index,
             css: {
-              top: '670rpx',
-              left: '184rpx',
+              top: '700rpx',
+              left: '186rpx',
               color: '#00cc88',
               fontWeight: 'bold',
-              fontSize: '24rpx'
+              fontSize: '30rpx'
             }
           },
           {
             type: 'text',
             text: '2 1 9 2',
             css: {
-              top: '714rpx',
-              left: '324rpx',
+              top: '744rpx',
+              left: '328rpx',
               color: '#00cc88',
               fontWeight: 'bold',
-              fontSize: '24rpx'
+              fontSize: '30rpx'
             }
           },
           {
             type: 'text',
             text: this.data.online,
             css: {
-              top: '756rpx',
-              left: '210rpx',
+              top: '785rpx',
+              left: '216rpx',
               color: '#00cc88',
               fontWeight: 'bold',
-              fontSize: '24rpx'
+              fontSize: '30rpx'
             }
           },
           {
             type: 'text',
             text: this.data.hour,
             css: {
-              top: '800rpx',
-              left: '260rpx',
+              top: '830rpx',
+              left: '268rpx',
               color: '#00cc88',
               fontWeight: 'bold',
-              fontSize: '24rpx'
+              fontSize: '30rpx'
             }
           }
         ]
       }
     })
+    if (this.data.name.length === 2) {
+      this.setData({
+        'imgDraw.views[0].css.left': '210rpx'
+      })
+    }
     if (this.data.online.length === 1) {
       this.setData({
-        'imgDraw.views[4].css.left': '240rpx'
+        'imgDraw.views[4].css.left': '254rpx'
       })
     }
 
     if (this.data.online.length === 3) {
       this.setData({
-        'imgDraw.views[4].css.left': '230rpx'
+        'imgDraw.views[4].css.left': '242rpx'
       })
     }
 
     if (this.data.online.length === 5) {
       this.setData({
-        'imgDraw.views[4].css.left': '220rpx'
+        'imgDraw.views[4].css.left': '228rpx'
       })
     }
 
     if (this.data.hour.length === 5) {
       this.setData({
-        'imgDraw.views[5].css.left': '290rpx'
+        'imgDraw.views[5].css.left': '292rpx'
       })
     }
     if (this.data.hour.length === 7) {
       this.setData({
-        'imgDraw.views[5].css.left': '270rpx'
+        'imgDraw.views[5].css.left': '272rpx'
       })
     }
   },

@@ -1,4 +1,3 @@
-const list = require('../list.js')
 Page({
   data: {
     isAuth: false,
@@ -11,6 +10,26 @@ Page({
   },
   onLoad() {
     this.checkAuth()
+    this.initData()
+  },
+  initData() {
+    wx.request({
+      url: 'https://acm.qtshe.com/acm/getConfig', //仅为示例，并非真实的接口地址
+      data: {
+        key: 'product',
+        dataId: 'qts-activity',
+        group: 'flutter'
+      },
+      method: 'POST',
+      header: {
+        'content-type': 'application/x-www-form-urlencoded' // 默认值
+      },
+      success: (res) => {
+        this.setData({
+          list: JSON.parse(res.data.data).nameList
+        })
+      }
+    })
   },
   checkAuth() {
     if (wx.getStorageSync('avatarUrl')) {
@@ -63,27 +82,34 @@ Page({
   },
   searchQuery(e) {
     let flag = false
-    list.nameList.map((item, index) => {
+    this.data.list.map((item, index) => {
       if (item.name === e.detail.value) {
         this.setData({
           name: item.name,
           hour: item.hour,
           index: item.index,
           startYear: item.startYear,
-          online: item.online,
-          hasPeople: true
+          online: item.online
         })
         flag = true
+        wx.showToast({
+          title: '身份校验成功，请确认登机',
+          icon: 'none'
+        })
       }
     })
     if (!flag) {
+      wx.showToast({
+        title: '本航班查无此人，请重新输入',
+        icon: 'none'
+      })
       this.setData({
+        query: '',
         name: '',
         hour: '',
         index: '',
         startYear: '',
-        online: '',
-        hasPeople: false
+        online: ''
       })
     }
   },
@@ -152,8 +178,8 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: `快来领取你的青团社六周年专属头像吧～`,
-      imageUrl: 'https://ojlf2aayk.qnssl.com/20180713shareImage.png',
+      title: `6是我们的超能力!`,
+      imageUrl: 'https://qiniu-image.qtshe.com/20190716share-image.png',
       path: '/pages/index/index'
     }
   },
