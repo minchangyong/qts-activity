@@ -25,7 +25,7 @@ Page({
       imgDraw: {
         width: '750rpx',
         height: '1334rpx',
-        background: 'https://qiniu-image.qtshe.com/20190716share-pack.png',
+        background: 'https://qiniu-image.qtshe.com/201907160716.png',
         views: [{
             type: 'text',
             text: this.data.name,
@@ -44,7 +44,7 @@ Page({
             text: this.data.startYear,
             css: {
               top: '658rpx',
-              left: '96rpx',
+              left: '100rpx',
               color: '#00cc88',
               fontWeight: 'bold',
               fontSize: '30rpx'
@@ -127,7 +127,7 @@ Page({
     }
     if (this.data.hour.length === 7) {
       this.setData({
-        'imgDraw.views[5].css.left': '272rpx'
+        'imgDraw.views[5].css.left': '280rpx'
       })
     }
   },
