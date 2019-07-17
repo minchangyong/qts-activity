@@ -12,6 +12,32 @@ Page({
     this.checkAuth()
     this.initData()
   },
+  getUserInfo(e) {
+    if (e.detail.errMsg === 'getUserInfo:ok') {
+      wx.setStorage({
+        key: 'avatarUrl',
+        data: e.detail.userInfo.avatarUrl.replace('/132', '/0')
+      })
+      this.setData({
+        avatarUrl: e.detail.userInfo.avatarUrl.replace('/132', '/0')
+      }, () => {
+        this.creatHeadImg()
+      })
+    }
+  },
+  getAuthInfo(e) {
+    if (e.detail.errMsg === 'getUserInfo:ok') {
+      wx.setStorage({
+        key: 'avatarUrl',
+        data: e.detail.userInfo.avatarUrl.replace('/132', '/0')
+      })
+      this.setData({
+        avatarUrl: e.detail.userInfo.avatarUrl.replace('/132', '/0')
+      }, () => {
+        this.creatRecord()
+      })
+    }
+  },
   initData() {
     wx.request({
       url: 'https://acm.qtshe.com/acm/getConfig', //仅为示例，并非真实的接口地址

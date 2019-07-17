@@ -1,11 +1,12 @@
 <!-- <heartbeat id='heartbeat' wx:if="{{showHeartbeat}}"></heartbeat> -->
-<auth-modal isShow="{{isAuth}}" bind:initData="checkAuth" />
 <view class="ripple" style="{{rippleStyle}}"></view>
 <view class="container" bindtouchstart="containerTap">
   <image src="https://qiniu-image.qtshe.com/20190712backpack.png" mode="widthFix" style="display: block;"/>
   <view class="create-btns">
-    <button class="creatRecord" bindtap="creatRecord"></button>
-    <button class="creatHeadImg" bindtap="creatHeadImg"></button>
+    <button class="creatRecord" open-type="getUserInfo" wx:if="{{isAuth}}" bindgetuserinfo="getAuthInfo"></button>
+    <button class="creatRecord" bindtap="creatRecord" wx:else></button>
+    <button class="creatHeadImg" open-type="getUserInfo" wx:if="{{isAuth}}" bindgetuserinfo="getUserInfo"/>
+    <button class="creatHeadImg" bindtap="creatHeadImg" wx:else></button>
   </view>
 </view>
 <view class="head-modal" wx:if="{{isShow}}">
@@ -21,8 +22,6 @@
   </view>
 </view>
 <head-image isDraw="{{isDraw}}" bind:creatImgOK="handleSuccess"/>
-
-
 <view class="head-modal" wx:if="{{isDialog}}">
   <view class="head-back"></view>
   <view class="head-content">
