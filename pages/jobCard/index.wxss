@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+}
+
+.upload-box {
+  width: 456rpx;
+  height: 414rpx;
+  margin: -1164rpx 0 0 114rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+  overflow: hidden;  
+}
+
+.add-btn {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.user-image {
+  width: 100%;
+  height: 100%;
+}
+
+.edit-user-name {
+  width: 500rpx;
+  height: 82rpx;
+  margin: 70rpx 0 0 100rpx;
+  text-align: center;
+}
+
+.create-btn {
+  width: 200rpx;
+  height: 200rpx;
+  margin: 100rpx auto 0;
+}

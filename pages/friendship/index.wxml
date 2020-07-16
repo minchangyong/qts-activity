@@ -1,5 +1,0 @@
-<painter palette="{{imgDraw}}" bind:imgOK="onImgOK" style="position: fixed;top: -9999rpx;"/>
-<view class="container" wx:if="{{sharePath}}">
-  <image src="{{sharePath}}" mode="widthFix" class="sharePath"/>
-  <button class="saveTolocal" bindtap="handlePhotoSaved">保存图片到本地</button>
-</view>
