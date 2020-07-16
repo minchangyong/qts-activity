@@ -1,73 +1,6 @@
 Page({
   data: {
-    isAuth: false,
-    isDraw: false,
-    isShow: false,
-    avatarUrl: '',
-    sharePath: '',
-    hasPeople: true,
-    isDialog: false
-  },
-  onLoad() {
-    this.checkAuth()
-    this.initData()
-  },
-  getUserInfo(e) {
-    if (e.detail.errMsg === 'getUserInfo:ok') {
-      wx.setStorage({
-        key: 'avatarUrl',
-        data: e.detail.userInfo.avatarUrl.replace('/132', '/0')
-      })
-      this.setData({
-        avatarUrl: e.detail.userInfo.avatarUrl.replace('/132', '/0')
-      }, () => {
-        this.creatHeadImg()
-      })
-    }
-  },
-  getAuthInfo(e) {
-    if (e.detail.errMsg === 'getUserInfo:ok') {
-      wx.setStorage({
-        key: 'avatarUrl',
-        data: e.detail.userInfo.avatarUrl.replace('/132', '/0')
-      })
-      this.setData({
-        avatarUrl: e.detail.userInfo.avatarUrl.replace('/132', '/0')
-      }, () => {
-        this.creatRecord()
-      })
-    }
-  },
-  initData() {
-    wx.request({
-      url: 'https://acm.qtshe.com/acm/getConfig', //仅为示例，并非真实的接口地址
-      data: {
-        key: 'product',
-        dataId: 'qts-activity',
-        group: 'flutter'
-      },
-      method: 'POST',
-      header: {
-        'content-type': 'application/x-www-form-urlencoded' // 默认值
-      },
-      success: (res) => {
-        this.setData({
-          list: JSON.parse(res.data.data).nameList
-        })
-      }
-    })
-  },
-  checkAuth() {
-    if (wx.getStorageSync('avatarUrl')) {
-      this.setData({
-        isAuth: false,
-        avatarUrl: wx.getStorageSync('avatarUrl')
-      })
-    } else {
-      this.setData({
-        isAuth: true
-      })
-    }
+
   },
   containerTap(res) {
     var x = res.touches[0].pageX;
@@ -79,83 +12,34 @@ Page({
       rippleStyle: 'top:' + y + 'px;left:' + x + 'px;-webkit-animation: ripple 0.4s linear;animation:ripple 0.4s linear;'
     });
   },
-  creatHeadImg() {
-    if (!this.data.sharePath) {
-      wx.showLoading({
-        title: '生成中'
-      })
-    }
-    this.setData({
-      isDraw: true
-    })
+  onLoad() {
+    this.selectQuery()
   },
-  creatRecord() {
-    this.setData({
-      isDialog: !this.data.isDialog
-    })
-  },
-  handleSuccess(e) {
-    this.setData({
-      isShow: true,
-      sharePath: e.detail.sharePath
-    })
-  },
-  closeModal() {
-    this.setData({
-      isShow: false,
-      isDraw: false
-    })
-  },
-  searchQuery(e) {
-    let flag = false
-    this.data.list.map((item, index) => {
-      if (item.name === e.detail.value) {
-        this.setData({
-          name: item.name,
-          hour: item.hour,
-          index: item.index,
-          startYear: item.startYear,
-          online: item.online
-        })
-        flag = true
-        wx.showToast({
-          title: '身份校验成功，请确认登机',
-          icon: 'none'
-        })
+  selectQuery() {
+    wx.cloud.callFunction({
+      name: 'getUserInfo',
+      data: {
+        userName: '闵昌勇'
+      },
+      success: res => {
+        console.log(res)
+        const {
+          data = []
+        } = res.result
+        if (data.length) {
+          this.setData({
+            userName: data[0].userName,
+            flowerName: data[0].flowerName,
+            jobTime: +data[0].jobTime,
+            jobNumber: data[0].jobNumber
+          })
+        } else {
+          wx.showToast({
+            title: '暂未查到您的在职信息',
+            icon: 'none'
+          })
+        }
       }
-    })
-    if (!flag) {
-      wx.showToast({
-        title: '本航班查无此人，请重新输入',
-        icon: 'none'
-      })
-      this.setData({
-        query: '',
-        name: '',
-        hour: '',
-        index: '',
-        startYear: '',
-        online: ''
-      })
-    }
-  },
-  handleCreate() {
-    if (!this.data.name) {
-      wx.showToast({
-        title: '请输入您的真实姓名',
-        icon: 'none'
-      })
-      return
-    }
-    let sendData = {
-      name: this.data.name,
-      hour: this.data.hour,
-      index: this.data.index,
-      startYear: this.data.startYear,
-      online: this.data.online
-    }
-    wx.navigateTo({
-      url: `/pages/friendship/index?sendData=${JSON.stringify(sendData)}`
     })
   },
   // 保存图片
@@ -204,7 +88,7 @@ Page({
   },
   onShareAppMessage() {
     return {
-      title: `6是我们的超能力!`,
+      title: `快来领取专属彩蛋！`,
       imageUrl: 'https://qiniu-image.qtshe.com/20190716share-image.png',
       path: '/pages/index/index'
     }

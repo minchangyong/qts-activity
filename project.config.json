@@ -21,12 +21,14 @@
 			"outputPath": ""
 		}
 	},
+	"cloudfunctionRoot": "cloudFunction/",
 	"compileType": "miniprogram",
 	"libVersion": "1.9.98",
 	"appid": "wx98022f2618f42f63",
 	"projectname": "qts-activity",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {
 		"search": {
 			"current": -1,

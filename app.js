@@ -1,4 +1,9 @@
+//app.js
 App({
-  onLaunch() {}
-
-})
+  onLaunch() {
+   wx.cloud.init({
+    env: 'prod-1pvnu',
+    traceUser: true
+   })
+  }
+ })
