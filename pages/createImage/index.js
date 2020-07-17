@@ -91,7 +91,7 @@ Page({
               top: '962rpx',
               left: '182rpx',
               fontWeight: 'bold',
-              fontSize: '34rpx',
+              fontSize: '36rpx',
               color: '#000'
             }
           },
@@ -102,7 +102,7 @@ Page({
               top: '1014rpx',
               left: '182rpx',
               fontWeight: 'bold',
-              fontSize: '40rpx',
+              fontSize: '36rpx',
               color: '#000'
             }
           },
@@ -112,6 +112,7 @@ Page({
             css: {
               top: '1070rpx',
               left: '182rpx',
+              fontWeight: 'bold',
               fontSize: '36rpx',
               color: '#3c3c3c'
             }
