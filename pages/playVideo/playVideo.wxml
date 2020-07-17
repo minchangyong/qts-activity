@@ -4,7 +4,7 @@
       id="myVideo"
       class="play__video"
       autoplay
-      poster="https://qiniu-app.qtshe.com/IMG_7707.jpg"
+      poster="{{ posterUrl }}"
       src="https://qiniu-app.qtshe.com/seven__mp4.mp4"
       bindtimeupdate="bindtimeupdate"
       bindended="handleEnd"

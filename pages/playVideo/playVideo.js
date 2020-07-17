@@ -6,6 +6,7 @@ Page({
    */
   data: {
     showStatus: 0,    // 操作按钮的值
+    posterUrl: "https://qiniu-app.qtshe.com/IMG_7707.jpg",
   },
 
   /**
@@ -44,7 +45,7 @@ Page({
    */
   handleEnd() {
     this.setData({
-      showStatus: 2
+      showStatus: 2,
     })
   },
 
@@ -56,7 +57,8 @@ Page({
     if (currentTime > 3 && this.data.showStatus === 0 && !this.isSkiped) {
       this.isSkiped = true
       this.setData({
-        showStatus: 1
+        showStatus: 1,
+        posterUrl: "https://qiniu-app.qtshe.com/last__poster.jpg",
       })
     }
   },

@@ -1,4 +1,4 @@
 <view class="index__page">
-  <image class="index__bg-icon" mode="widthFix" src="https://qiniu-app.qtshe.com/kfs__200.png"></image>
+  <image class="index__bg-icon" mode="widthFix" src="https://qiniu-app.qtshe.com/kfs__2001.png"></image>
   <image bindtap="skipPage" class="index__btn" mode="widthFix" src="https://qiniu-app.qtshe.com/index__btn1.gif"></image>
 </view>

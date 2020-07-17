@@ -13,6 +13,6 @@
   position: absolute;
   display: inline-block;
   width: 566rpx;
-  top: 974rpx;
+  top: 944rpx;
   left: 94rpx;
 }
