@@ -64,5 +64,5 @@ Page({
 
   onShareAppMessage() {
     return getApp().globalData.shareContent
-  },
+  }
 })

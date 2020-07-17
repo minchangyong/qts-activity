@@ -5,7 +5,7 @@
       class="play__video"
       autoplay
       poster="https://qiniu-app.qtshe.com/IMG_7707.jpg"
-      src="https://qiniu-video.qtshe.com/20200717congratulate.Mp4"
+      src="https://qiniu-app.qtshe.com/seven__mp4.mp4"
       bindtimeupdate="bindtimeupdate"
       bindended="handleEnd"
       controls="{{ false }}"
