@@ -22,7 +22,7 @@
   justify-content: space-between;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #000;
 }
 
@@ -39,6 +39,7 @@
   padding: 0 20rpx;
   box-sizing: border-box;
   line-height: 50px;
+  z-index: 9999;
 }
 
 .cropper-buttons .upload, .cropper-buttons .getCropperImage{

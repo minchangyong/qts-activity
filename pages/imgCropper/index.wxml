@@ -2,17 +2,17 @@
 
 <view class="cropper-wrapper">
   <template is="cropper" data="{{...cropperOpt}}"/>
-  <view class="cropper-buttons" style="color: {{cropperOpt.boundStyle.color}}">
-    <view
+  <cover-view class="cropper-buttons" style="color: {{cropperOpt.boundStyle.color}}">
+    <cover-view
       class="upload btn"
       bindtap="uploadTap">
       重新上传
-    </view>
-    <view
+    </cover-view>
+    <cover-view
       class="getCropperImage btn"
       style="background-color: {{cropperOpt.boundStyle.color}};"
       bindtap="getCropperImage">
       确定
-    </view>
-  </view>
+    </cover-view>
+  </cover-view>
 </view>
