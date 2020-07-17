@@ -53,7 +53,7 @@ Page({
       })
     } else {
       wx.showLoading({
-        title: '查询中'
+        title: '登录中'
       })
       wx.cloud.callFunction({
         name: 'getUserInfo',

@@ -34,16 +34,12 @@
   width: 100%;
   height: 100%;
 }
-.place-class  {
-  font-family: 'YakuHei';
-}
 
 .edit-user-name {
   width: 500rpx;
   height: 82rpx;
   margin: 70rpx 0 0 100rpx;
   text-align: center;
-  font-family: 'YakuHei';
   font-weight: bold;
 }
 

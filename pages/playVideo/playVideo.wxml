@@ -4,7 +4,7 @@
       id="myVideo"
       class="play__video"
       autoplay
-      src="https://qiniu-app.qtshe.com/1594949497715251.mp4"
+      src="https://qiniu-video.qtshe.com/20200717congratulate.Mp4"
       bindtimeupdate="bindtimeupdate"
       bindended="handleEnd"
       controls="{{ false }}"

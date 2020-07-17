@@ -82,30 +82,30 @@ Page({
             type: 'text',
             text: this.data.jobNumber,
             css: {
-              top: '950rpx',
-              left: '175rpx',
+              top: '962rpx',
+              left: '182rpx',
               fontWeight: 'bold',
-              fontSize: '36rpx',
-              color: '#3c3c3c'
+              fontSize: '34rpx',
+              color: '#000'
             }
           },
           {
             type: 'text',
             text: this.data.flowerName,
             css: {
-              top: '1000rpx',
-              left: '175rpx',
+              top: '1004rpx',
+              left: '182rpx',
               fontWeight: 'bold',
-              fontSize: '36rpx',
-              color: '#3c3c3c'
+              fontSize: '40rpx',
+              color: '#000'
             }
           },
           {
             type: 'text',
             text: this.data.userName,
             css: {
-              top: '1050rpx',
-              left: '175rpx',
+              top: '1060rpx',
+              left: '182rpx',
               fontSize: '36rpx',
               color: '#3c3c3c'
             }

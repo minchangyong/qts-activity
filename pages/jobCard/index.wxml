@@ -1,11 +1,11 @@
 <view class="container">
 	<image src="https://qiniu-image.qtshe.com/20200717back.png" mode="widthFix" />
 	<view class="upload-box">
-      <image src="{{userImage}}" mode="widthFix" class="user-image"  wx:if="{{userImage}}"  bindtap="handleSelect"/>
-			<view class="upload-add" bindtap="handleChoose" wx:else>
-      <image src="https://qiniu-image.qtshe.com/20200716choose-image.png" mode="widthFix" class="add-btn"  />
-				</view>
+		<image src="{{userImage}}" mode="widthFix" class="user-image" wx:if="{{userImage}}" bindtap="handleSelect" />
+		<view class="upload-add" bindtap="handleChoose" wx:else>
+			<image src="https://qiniu-image.qtshe.com/20200716choose-image.png" mode="widthFix" class="add-btn" />
+		</view>
 	</view>
-	<input type="text" placeholder="请输入您的姓名" placeholder-class="place-class" bindinput="handleUserName" class="edit-user-name" />
+	<input type="text" placeholder="请输入您的真实姓名" placeholder-class="place-class" bindinput="handleUserName" class="edit-user-name" />
 	<image src="https://qiniu-image.qtshe.com/20200716create-btn.png" mode="widthFix" class="create-btn" bindtap="handleSearch" />
 </view>
