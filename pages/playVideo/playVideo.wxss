@@ -14,12 +14,10 @@
 
 .cant__skip {
   width: 300rpx;
-  height: 390rpx;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -150rpx;
-  margin-top: -320rpx;
+  transform:  translate(-50%, -50%);
 }
 
 .skip__btn {
@@ -27,6 +25,7 @@
   z-index: 20;
   position: absolute;
   right: 40rpx;
+  bottom:  - 50rpx;
 }
 
 .skip__box {

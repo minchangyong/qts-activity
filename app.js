@@ -17,5 +17,11 @@ App({
     env: 'prod-1pvnu',
     traceUser: true
    })
+   wx.getSystemInfo({
+     success: (result) => {
+       console.log(result)
+       wx.setStorageSync('screenHeight', result.screenHeight)
+     },
+   })
   }
  })

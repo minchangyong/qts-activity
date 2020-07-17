@@ -15,7 +15,8 @@ Page({
   onLoad(options) {
     this.setData({
       userImage: options.userImage || '',
-      userName: options.userName
+      userName: options.userName,
+      screenHeight: wx.getStorageSync('screenHeight') >= 780 ? true : false
     })
     wx.cloud.callFunction({
       name: 'getUserInfo',
@@ -71,7 +72,7 @@ Page({
       imgDraw: {
         width: '750rpx',
         height: '1334rpx',
-        background: `https://qiniu-image.qtshe.com/20200717back-${this.data.jobTime}.png`,
+        background: `https://qiniu-image.qtshe.com/20200719${this.data.jobTime}.jpg`,
         views: [
           {
             type: 'image',

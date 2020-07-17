@@ -9,6 +9,7 @@
   display: flex;
   padding: 0 32rpx;
   justify-content: space-between;
+  margin-top: 24rpx;
 }
 
 .save-btn {
