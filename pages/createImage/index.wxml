@@ -1,6 +1,6 @@
 <painter palette="{{imgDraw}}" bind:imgOK="onImgOK" style="position: absolute; left: -9999rpx;" />
 <view class="container" style="background: {{colorList[jobTime]}}" wx:if="{{sharePath}}">
-	<image src="{{sharePath}}" mode="widthFix" show-menu-by-longpress/>
+	<image src="{{sharePath}}" mode="widthFix" show-menu-by-longpress style="width: 600rpx; margin: 0 auto;"/>
 	<view class="bottom-btn">
 		<button class="save-btn" bindtap="savePhoto"></button>
 		<button class="share-btn" open-type="share"></button>

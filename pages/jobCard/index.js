@@ -3,6 +3,11 @@ Page({
     userImage: '',
     userName: ''
   },
+  onLoad() {
+    wx.setBackgroundColor({
+      backgroundColorBottom: '#47444a'
+    })
+  },
   onShow() {
     this.setData({
       userImage: wx.getStorageSync('userImage') || ''

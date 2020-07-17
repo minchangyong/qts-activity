@@ -37,6 +37,9 @@ Page({
                 frontColor: this.data.jobTime === 1 ? '#000000' :  '#ffffff',
                 backgroundColor: this.data.colorList[this.data.jobTime]
               })
+              wx.setBackgroundColor({
+                backgroundColor: this.data.colorList[this.data.jobTime]
+              })
               this.drawPic()
             })
           } else {
@@ -49,6 +52,9 @@ Page({
               this.drawPic()
               wx.setNavigationBarColor({
                 frontColor: '#ffffff',
+                backgroundColor: this.data.colorList[0]
+              })
+              wx.setBackgroundColor({
                 backgroundColor: this.data.colorList[0]
               })
             })
@@ -80,7 +86,7 @@ Page({
           },
           {
             type: 'text',
-            text: this.data.jobNumber,
+            text:   `${this.data.jobTime !== 0 ? '工号：' : ''}${this.data.jobNumber }`,
             css: {
               top: '962rpx',
               left: '182rpx',
@@ -91,9 +97,9 @@ Page({
           },
           {
             type: 'text',
-            text: this.data.flowerName,
+            text: `${this.data.jobTime !== 0 ? '花名：' : ''}${this.data.flowerName }`,
             css: {
-              top: '1004rpx',
+              top: '1014rpx',
               left: '182rpx',
               fontWeight: 'bold',
               fontSize: '40rpx',
@@ -102,9 +108,9 @@ Page({
           },
           {
             type: 'text',
-            text: this.data.userName,
+            text: `${this.data.jobTime !== 0 ? '姓名：' : ''}${this.data.userName }`,
             css: {
-              top: '1060rpx',
+              top: '1070rpx',
               left: '182rpx',
               fontSize: '36rpx',
               color: '#3c3c3c'
@@ -151,5 +157,8 @@ Page({
         })
       }
     })
+  },
+  onShareAppMessage() {
+    return getApp().globalData.shareContent
   }
 })
