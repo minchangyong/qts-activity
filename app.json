@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/jobCard/index"
+    "pages/jobCard/index",
+    "pages/createImage/index",
+    "pages/imgCropper/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

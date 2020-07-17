@@ -1,0 +1,26 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 32rpx;
+}
+
+.bottom-btn {
+  width: 100%;
+  display: flex;
+  padding: 0 32rpx;
+  justify-content: space-between;
+}
+
+.save-btn {
+  width: 320rpx;
+  height: 120rpx;
+  background: url('https://qiniu-image.qtshe.com/20200717save-btn.png') no-repeat left center;
+  background-size: 100% 100%;
+}
+
+.share-btn {
+  width: 320rpx;
+  height: 120rpx;
+  background: url('https://qiniu-image.qtshe.com/20200717want-share.png') no-repeat left center;
+  background-size: 100% 100%;
+}

@@ -8,18 +8,27 @@
 		"es6": true,
 		"enhance": true,
 		"postcss": true,
+		"preloadBackgroundData": false,
 		"minified": true,
 		"newFeature": true,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"cloudfunctionRoot": "cloudFunction/",
 	"compileType": "miniprogram",
@@ -58,6 +67,13 @@
 					"name": "生成工牌",
 					"pathName": "pages/jobCard/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "生成分享图",
+					"pathName": "pages/createImage/index",
+					"query": "userName=闵昌勇",
 					"scene": null
 				}
 			]

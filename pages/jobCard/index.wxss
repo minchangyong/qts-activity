@@ -1,18 +1,28 @@
 .container {
   width: 100%;
   min-height: 100vh;
-  background: #fff;
+  background: #47444a;
 }
 
 .upload-box {
   width: 456rpx;
   height: 414rpx;
-  margin: -1164rpx 0 0 114rpx;
+  margin: -1124rpx 0 0 114rpx;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 8rpx;
-  overflow: hidden;  
+  overflow: hidden;
+}
+
+.upload-add {
+  width: 456rpx;
+  height: 414rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8rpx;
+  overflow: hidden;
 }
 
 .add-btn {
@@ -24,12 +34,17 @@
   width: 100%;
   height: 100%;
 }
+.place-class  {
+  font-family: 'YakuHei';
+}
 
 .edit-user-name {
   width: 500rpx;
   height: 82rpx;
   margin: 70rpx 0 0 100rpx;
   text-align: center;
+  font-family: 'YakuHei';
+  font-weight: bold;
 }
 
 .create-btn {
