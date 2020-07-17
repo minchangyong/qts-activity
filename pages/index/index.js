@@ -100,10 +100,6 @@ Page({
     })
   },
   onShareAppMessage() {
-    return {
-      title: `快来领取专属彩蛋！`,
-      imageUrl: 'https://qiniu-image.qtshe.com/20190716share-image.png',
-      path: '/pages/index/index'
-    }
+    return getApp().globalData.shareContent
   },
 })

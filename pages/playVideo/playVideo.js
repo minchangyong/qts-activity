@@ -59,5 +59,10 @@ Page({
         showStatus: 1
       })
     }
-  }
+  },
+
+
+  onShareAppMessage() {
+    return getApp().globalData.shareContent
+  },
 })
