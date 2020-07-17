@@ -18,7 +18,9 @@ Page({
   },
 
   skipPage: function() {
-
+    wx.navigateTo({
+      url: '/pages/jobCard/index',
+    })
   },
 
   /**
