@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/friendship/index"
+    "pages/friendship/index",
+    "pages/playVideo/playVideo"
   ],
   "window": {
     "backgroundTextStyle": "light",
