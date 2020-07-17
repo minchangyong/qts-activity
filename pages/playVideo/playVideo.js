@@ -37,7 +37,7 @@ Page({
         showStatus: -1,
       })
       this.videoContext.play()
-    }, 2000)
+    }, 3800)
   },
 
   /**
