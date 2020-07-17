@@ -2,6 +2,16 @@ Page({
   data: {
 
   },
+
+  /**
+   * 跳转到视频播放页面
+   */
+  skipPage() {
+    wx.navigateTo({
+      url: '/pages/playVideo/playVideo',
+    })
+  },
+
   containerTap(res) {
     var x = res.touches[0].pageX;
     var y = res.touches[0].pageY + 85;
@@ -12,9 +22,12 @@ Page({
       rippleStyle: 'top:' + y + 'px;left:' + x + 'px;-webkit-animation: ripple 0.4s linear;animation:ripple 0.4s linear;'
     });
   },
+
   onLoad() {
-    this.selectQuery()
+    // this.selectQuery()
   },
+
+
   selectQuery() {
     wx.cloud.callFunction({
       name: 'getUserInfo',

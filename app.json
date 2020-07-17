@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/jobCard/index",
+    "pages/playVideo/playVideo",
     "pages/createImage/index",
     "pages/imgCropper/index"
   ],

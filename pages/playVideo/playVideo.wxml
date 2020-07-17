@@ -1,0 +1,18 @@
+<!--pages/playVideo/playVideo.wxml-->
+<view class="play__page">
+  <video 
+      id="myVideo"
+      class="play__video"
+      autoplay
+      src="https://qiniu-app.qtshe.com/1594949497715251.mp4"
+      bindtimeupdate="bindtimeupdate"
+      bindended="handleEnd"
+      controls="{{ false }}"
+    ></video>
+    <view class="skip__box">
+      <image hidden="{{ showStatus !== 1 }}" bindtap="skipStatus" class="skip__btn shaking" mode="heightFix" src="https://qiniu-app.qtshe.com/skipIt.png"></image>
+      <image hidden="{{ showStatus !== 2 }}" bindtap="skipPage" class="skip__btn shaking" mode="heightFix" src="https://qiniu-app.qtshe.com/build__now1.png"></image>
+    </view>
+    <view hidden="{{ showStatus !== 3 }}" class="marsk__box"></view>
+    <image hidden="{{ showStatus !== 3 }}" bindtap="skipStatus" class="cant__skip" src="https://qiniu-app.qtshe.com/cantSkipTo1.gif"></image>
+</view>

@@ -1,0 +1,148 @@
+/* pages/playVideo/playVideo.wxss */
+.play__page {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.play__video {
+  width: 100vw;
+  height: 100vh;
+}
+
+.cant__skip {
+  width: 300rpx;
+  height: 390rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150rpx;
+  margin-top: -320rpx;
+}
+
+.skip__btn {
+  height: 124rpx;
+  z-index: 20;
+  position: absolute;
+  right: 40rpx;
+}
+
+.skip__box {
+  position: absolute;
+  bottom: 130rpx;
+  bottom: calc(130rpx + env(safe-area-inset-bottom));
+  height: 124rpx;
+  z-index: 10;
+  width: 100%;
+}
+
+.marsk__box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #000;
+  width: 100vw;
+  height: 100vh;
+  opacity: .3;
+}
+
+.shaking {
+  /* -webkit-animation: foo-top 300ms ease-in-out infinite, foo-right 300ms linear infinite; */
+  /* animation: foo-top 300ms ease-in-out infinite, foo-right 300ms linear infinite; */
+  /* animation: foo-top 300ms ease-in-out infinite; */
+  animation: foo-right 300ms linear infinite;
+}
+
+@-webkit-keyframes foo-top {
+  0% {
+    top: -0.5vmin;
+  }
+
+  50% {
+    top: 0.5vmin;
+  }
+
+  100% {
+    top: -0.5vmin;
+  }
+}
+
+@keyframes foo-top {
+  0% {
+    top: -0.5vmin;
+  }
+
+  50% {
+    top: 0.5vmin;
+  }
+
+  100% {
+    top: -0.5vmin;
+  }
+}
+
+@-webkit-keyframes foo-right {
+  0% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    right: 45rpx;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    right: 35rpx;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes foo-right {
+  0% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  25% {
+    right: 45rpx;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  50% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  75% {
+    right: 35rpx;
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    right: 40rpx;
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}

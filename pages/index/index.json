@@ -1,7 +1,7 @@
 {
-  "navigationBarBackgroundColor": "#4377ca",
-  "navigationBarTextStyle": "white",
-  "backgroundColor": "#4377ca",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#ffffff",
   "backgroundTextStyle": "dark",
   "usingComponents": {
     "head-image": "/pages/components/headimg/index"
