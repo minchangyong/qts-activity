@@ -51,13 +51,13 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": -1,
 			"list": [
 				{
-					"id": 0,
-					"name": "分享",
-					"pathName": "pages/friendship/index",
-					"query": "sendData= {\"name\":\"闵昌勇\",\"hour\":\"5 0 0\",\"index\":\"0 0 0 1 7\",\"startYear\":\"Q 2 0 1 6 0 3 0 7\",\"online\":\"3 0 0\"}",
+					"id": -1,
+					"name": "生成工牌",
+					"pathName": "pages/jobCard/index",
+					"query": "",
 					"scene": null
 				},
 				{

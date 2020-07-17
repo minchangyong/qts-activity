@@ -1,8 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/friendship/index",
-    "pages/playVideo/playVideo"
+    "pages/playVideo/playVideo",
+    "pages/jobCard/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

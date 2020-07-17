@@ -14,10 +14,11 @@
 
 .cant__skip {
   width: 300rpx;
+  height: 390rpx;
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-left: -185rpx;
+  margin-left: -150rpx;
   margin-top: -320rpx;
 }
 

@@ -1,0 +1,10 @@
+<view class="container">
+	<image src="https://qiniu-image.qtshe.com/20200716back.png" mode="widthFix" />
+	<view class="upload-box" bindtap="handleChoose">
+      <image src="{{userImage}}" mode="widthFix" class="user-image"  wx:if="{{userImage}}" />
+      <image src="https://qiniu-image.qtshe.com/20200716choose-image.png" mode="widthFix" class="add-btn" wx:else />
+	</view>
+
+	<input type="text" placeholder="请输入您的姓名" bindinput="handleUserName" class="edit-user-name" />
+	<image src="https://qiniu-image.qtshe.com/20200716create-btn.png" mode="widthFix" class="create-btn" bindtap="handleSearch" />
+</view>

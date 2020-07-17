@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFF",
+  "navigationBarTextStyle": "black",
+  "backgroundColor": "#FFF",
+  "backgroundTextStyle": "dark",
+  "usingComponents": {
+    "painter": "/components/painter/painter"
+  }
+}
