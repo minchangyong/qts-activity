@@ -34,7 +34,7 @@ Page({
               jobNumber: data[0].jobNumber
             }, () => {
               wx.setNavigationBarColor({
-                frontColor: '#ffffff',
+                frontColor: this.data.jobTime === 1 ? '#000000' :  '#ffffff',
                 backgroundColor: this.data.colorList[this.data.jobTime]
               })
               this.drawPic()
