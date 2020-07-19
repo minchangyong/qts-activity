@@ -12,7 +12,7 @@
     ></video>
     <view class="skip__box">
       <image hidden="{{ showStatus !== 1 }}" bindtap="skipStatus" class="skip__btn shaking" mode="heightFix" src="https://qiniu-app.qtshe.com/skipIt.png"></image>
-      <image hidden="{{ showStatus !== 2 }}" bindtap="skipPage" class="skip__btn shaking" mode="heightFix" src="https://qiniu-image.qtshe.com/2020071910.png"></image>
+      <image hidden="{{ showStatus !== 2 }}" bindtap="skipPage" class="skip__btn shaking" mode="heightFix" src="https://qiniu-image.qtshe.com/20200717b-catch.png"></image>
     </view>
     <view hidden="{{ showStatus !== 3 }}" class="marsk__box"></view>
     <image hidden="{{ showStatus !== 3 }}" bindtap="skipStatus" mode="widthFix" class="cant__skip" src="https://qiniu-image.qtshe.com/202007199.gif"></image>
